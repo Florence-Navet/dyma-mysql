@@ -121,12 +121,14 @@ ON mc2.person_id = p2.person_id
 Join movie m ON mc1.movie_id = m.movie_id
 Limit 100;
 
+--acteurs et membres de lequipe de tournage
 SELECT person_name FROM person 
 JOIN movie_cast ON person.person_id = movie_cast.person_id
 UNION
 SELECT person_name FROM person 
 JOIN movie_crew ON movie_crew.person_id = person.person_id
 LIMIT 50;
+
 
 
 
