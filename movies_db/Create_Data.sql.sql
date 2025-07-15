@@ -30,7 +30,7 @@ CREATE TABLE korean_movie (
   FROM movie
   WHERE release_date < '1950-01-01'
 
-SELECT * FROM movie WHERE title = 'Un vie de Chouquette';
+SELECT * FROM movie WHERE title = 'Une vie de Chouquette';
 
 -- UPDATE movie
 -- SET vote_average = 9.5, vote_count = 5500
