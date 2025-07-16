@@ -40,7 +40,7 @@ WHERE movie_id NOT IN (
 
 
 /*Obtenez le titre de chaque film accompagné du nombre total de films sortis la même année
-pas de join ni de order by* ni de group by*/
+pas de join ni de order by* ni de group by f fin exercice*/
 
 
 SELECT 
@@ -142,6 +142,7 @@ SELECT genre_name, (
 FROM genre as g 
 ORDER BY genre_name;
 
+-- recuperer popularité films 
 SELECT genre_name, 
 (SELECT title
 FROM movie
@@ -181,4 +182,6 @@ JOIN genre g ON mg.genre_id = g.genre_id
 GROUP BY p.person_name
 ORDER BY Nombre_de_genres DESC
 LIMIT 15;
+
+
 
