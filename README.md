@@ -29,5 +29,14 @@ Dyma formation MySQL
 
 ---  
 
+## Connection à MySql
+
+```bash
+mysql -u nom_user -pmotdepasse
+SHOW DATABASES;
+USE nom_datase;
+```   
+Aller dans dans son fichier mysql et lancer sa queries  
+
 ---  
 
