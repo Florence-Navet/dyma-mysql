@@ -1,6 +1,6 @@
 -- pour drop index
-DROP INDEX idx_title;
-DROP INDEX idx_release_date;
+DROP INDEX idx_title on movie;
+DROP INDEX idx_release_date on movie;
 
 -- pour voir tous les index
 SHOW INDEXES FROM movie;
@@ -14,7 +14,7 @@ CREATE [UNIQUE | FULLTEXT | SPATIAL] INDEX index_name
     [index_option]
     [algorithm_option | lock_option] ...*/
 
---cree un index - car les titres sont trop longs on doit mettre un nombre
+-- cree un index - car les titres sont trop longs on doit mettre un nombre
 CREATE INDEX idx_title ON movie (title(768));
 
 CREATE INDEX idx_release_date ON movie (release_date);
