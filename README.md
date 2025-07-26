@@ -61,4 +61,35 @@ puis
    il propose ma BDD, il me montre tous les éléments qui
    font être potentiel être modifiés, il va dropper toutes
    les FK et remettre en place les différentes contraintes.  
-   On close.
+   On close.  
+---  
+## Création d'un utilisateur  
+Après s'être connecté, faire :  
+```bash
+CREATE USER mywebapp@'%' IDENTIFIED BY '1234';
+```  
+- % étant pour la provenance de n'importe quels domaines  
+- 1234 : mdp au choix  
+- si vous mettez rien de plus c'est sous entendu : 'caching_sha2_password' pour le cryptage du mot de passe  
+  
+---   
+  
+## Plus d'infos  
+1. Pour savoir quel user est connecté :  
+```bash
+SELECT CURRENT_USER();
+```  
+2. Bloquage du compte au bout de temp de tentatives de mdp echoué  
+A la création de compte (bloqué pendant 2 jours) :
+```bash
+CREATE USER mywebapp2@'%' IDENTIFIED BY '1234' FAILED_LOGIN_ATTEMPTS 3 PASSWORD_LOCK_TIME 2;
+```  
+3. modifier un mot de passe  
+```bash
+ALTER USER mywebapp@'%' IDENTIFIED BY '1234';
+```  
+4. supprimer un user  
+```bash
+DROP USER mywebapp@'%';
+```  
+---  
